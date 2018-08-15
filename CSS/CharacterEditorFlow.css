@@ -1,0 +1,121 @@
+/* anything that has a class attribute ending with "Section" */
+
+[class $= "Section"] {
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	padding: 10px 5px;
+	border-style: solid;
+	border-width: 1px;
+	overflow: hidden;
+	word-break: normal;
+	border-color: #cbcefb;
+}
+
+	[class $= "Section"] > * {
+		margin: 0px 5px;
+	}
+
+.scalingSection {
+	grid-area: scalingArea;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.layersSection {
+	grid-area: layersArea;
+}
+
+.partsSection {
+	grid-area: partsArea;
+}
+
+.frameNavigation {
+	grid-area: frameNavigationArea;
+}
+
+.loadingSection {
+	/*display: none;*/
+	grid-area: loadingArea;
+}
+
+.canvasSection {
+	grid-area: _canvasArea;
+}
+
+.scalingSection {
+	grid-area: scalingSectionArea;
+}
+
+.characterAnimationEditor {
+	display: grid;
+	grid-area: characterAnimationEditorArea;
+	grid-template-areas: 'createButtonsArea' 'mainCharacterEditorArea' 'frameNavigationArea' 'loadingArea' 'scalingSectionArea';
+}
+
+.mainCharacterEditor {
+	grid-area: mainCharacterEditorArea;
+}
+
+.anchorSection {
+	grid-area: _anchorArea;
+}
+
+.navSection {
+	grid-area: ____navArea;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.createButtons {
+	grid-area: createButtonsArea;
+}
+
+#lstKnownCharacters {
+	grid-area: lstKnownCharactersArea;
+}
+
+#lstKnownAnimations {
+	grid-area: lstKnownAnimationsArea;
+}
+
+.characterAnimationListColumn {
+	display: grid;
+	grid-area: characterAnimationListColumnArea;
+	grid-template-areas: 'lstKnownCharactersArea' 'lstKnownAnimationsArea';
+}
+
+.characterSection {
+	display: grid;
+	grid-area: characterArea;
+	grid-template-areas: 'characterAnimationListColumnArea characterAnimationEditorArea';
+}
+
+.container {
+	display: grid;
+	grid-template-areas: 'characterArea partsArea layersArea';
+	border: solid;
+	border-width: 1px;
+	border-color: #cbcefb;
+	height: 100%;
+}
+
+/*
+    If the window is small, switch to a vertical layout.
+    NOTE: This is affected by scaling in the browser.
+
+*/
+@media (max-width: 920px) {
+	.container {
+		grid-template-areas: '_createArea' 'loadingArea' 'scalingArea' '_canvasArea' '____navArea' '_anchorArea';
+	}
+}
+
+
+/* ----------------- */
+.createSection {
+	grid-area: characterArea;
+}
